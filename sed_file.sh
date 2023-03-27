@@ -9,4 +9,4 @@ echo
 echo "FILE: $FILE"
 echo "Imagen:  ${IMAGEN_DOCKER}:${VERSION_DOCKER}"
 echo 
-sed "s/image:.*$/image: ${IMAGEN_DOCKER}:${VERSION_DOCKER}/"  $FILE
+sed -i "s/image:.*$/image: ${IMAGEN_DOCKER}:${VERSION_DOCKER}/"  $FILE
