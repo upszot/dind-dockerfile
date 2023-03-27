@@ -1,0 +1,54 @@
+kind: Template
+apiVersion: v1
+metadata:
+  annotations:  
+  tags: prometium-dev-prueba
+  name: prometium-dev-prueba
+  app: prometium-dev-prueba
+message: ""
+objects:
+  - apiVersion: v1
+    kind: Service
+    metadata:
+      name: server-eureka
+      namespace: prometium-dev-prueba
+    spec:
+      ports:
+      - port: 8763
+        targetPort: 8763
+      selector:
+        app: server-eureka
+      type: NodePort
+  - apiVersion: v1
+    kind: DeploymentConfig
+    metadata:
+      labels:
+        namespace: pipeline-prometium-prueba3-dev
+        app: server-eureka
+      name: server-eureka-deployment2
+    spec:
+      replicas: 1
+      selector:
+        app: server-eureka
+        deploymentConfig: server-eureka-deployment2
+      strategy:
+        resources: {}
+        rollingParams:
+          intervalSeconds: 1
+          maxSurge: 25%
+          maxUnavailable: 25%
+          timeoutSeconds: 600
+          updatePeriodSeconds: 1
+        type: Rolling
+      template:
+        metadata:
+          labels:
+            app: server-eureka
+            deploymentConfig: server-eureka-deployment2
+        spec:
+          containers:
+          - image: docker-registry.default.svc:5000/prometium-dev/backend-server-eureka:RELEASE_v1.0.0
+            imagePullPolicy: IfNotPresent
+            name: server-eureka
+            ports:
+            - containerPort: 8763
