@@ -1,3 +1,5 @@
 #!/bin/sh
 
-oc get route default-route -n openshift-image-registry --template='{{ .spec.host }}'
+OPENSHIFT_REGISTRY=$(oc get route default-route -n openshift-image-registry --template='{{ .spec.host }}')
+export OPENSHIFT_REGISTRY
+
