@@ -1,0 +1,43 @@
+---
+apiVersion: apps.openshift.io/v1
+kind: DeploymentConfig
+metadata:
+  name: ${appName}
+  namespace: ${namespaceName}
+spec:
+  replicas: 1
+  selector:
+    app: ${appName}
+    deploymentConfig: ${appName}
+  template:
+    metadata:
+      labels:
+        namespace: ${namespaceName}
+        app: ${appName}
+    spec:
+      containers:
+      - name: ${appName}
+        image: ${appName}:${appTag}
+        ports:
+        - containerPort: 8763
+      imagePullPolicy: IfNotPresent
+  strategy:
+    type: Rolling
+  triggers:
+  - type: ConfigChange
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: ${appName}
+  labels:
+    app: ${appName}
+    deploymentConfig: ${appName}
+spec:
+  type: NodePort
+  ports:
+  - port: 8763
+    targetPort: 8763
+  selector:
+    app: ${appName}
+---
