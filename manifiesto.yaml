@@ -19,10 +19,9 @@ spec:
     spec:
       containers:
       - name: ${appName}
-        image: ${appName}:${appTag}
+        image: registry.openshift-image-registry.svc:5000/${namespaceName}/${appName}:${appTag}
         ports:
         - containerPort: 8763
-      imagePullPolicy: IfNotPresent
   strategy:
     type: Rolling
   triggers:
