@@ -9,10 +9,6 @@ spec:
   selector:
     app: ${appName}
     deploymentConfig: ${appName}
-  template:
-    metadata:
-      labels:
-        namespace: ${namespaceName}
     spec:
       containers:
       - name: ${appName}
