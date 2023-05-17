@@ -32,7 +32,7 @@ metadata:
   name: ${appName}
   labels:
     app: ${appName}
-    deploymentConfig: ${name}
+    deploymentConfig: ${appName}
 spec:
   type: NodePort
   ports:
