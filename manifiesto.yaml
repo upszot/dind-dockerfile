@@ -2,22 +2,22 @@
 apiVersion: apps.openshift.io/v1
 kind: DeploymentConfig
 metadata:
-  name: ${params.name}
+  name: ${name}
   namespace: ${namespaceName}
 spec:
   replicas: 1
   selector:
-    app: ${params.name}
-    deploymentConfig: ${params.name}
+    app: ${name}
+    deploymentConfig: ${name}
   template:
     metadata:
       labels:
         namespace: ${namespaceName}
-        app: ${params.name}
+        app: ${name}
     spec:
       containers:
-      - name: ${params.name}
-        image: ${params.name}:${appTag}
+      - name: ${name}
+        image: ${name}:${appTag}
         ports:
         - containerPort: 8763
       imagePullPolicy: IfNotPresent
@@ -29,15 +29,15 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: ${params.name}
+  name: ${name}
   labels:
-    app: ${params.name}
-    deploymentConfig: ${params.name}
+    app: ${name}
+    deploymentConfig: ${name}
 spec:
   type: NodePort
   ports:
   - port: 8763
     targetPort: 8763
   selector:
-    app: ${params.name}
+    app: ${name}
 ---
