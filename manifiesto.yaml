@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: ${appName}
-        image: registry.openshift-image-registry.svc:5000/${namespaceName}/${appName}:${appTag}
+        image: image-registry.openshift-image-registry.svc:5000/${namespaceName}/${appName}:${appTag}
         ports:
         - containerPort: 8763
   strategy:
