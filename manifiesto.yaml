@@ -7,8 +7,15 @@ metadata:
 spec:
   replicas: 1
   selector:
+    namespace: ${namespaceName}
     app: ${appName}
     deploymentConfig: ${appName}
+  template:
+    metadata:
+      labels:
+        namespace: ${namespaceName}
+        app: ${appName}
+        deploymentConfig: ${appName}
     spec:
       containers:
       - name: ${appName}
