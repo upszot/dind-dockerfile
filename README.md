@@ -86,7 +86,18 @@ RUN tar zxf /tmp/client-tools.tar.gz -C /usr/local/bin oc \
 
 Crear un nuevo Pipeline en Jenkins
 
-![The San Juan Mountains are beautiful!](/Documentacion/Imagenes/NombrePipeline.png "Nuevo Pipeline Jenkins")
+![Nombre de Pipeline](/Documentacion/Imagenes/NombrePipeline.png "Nuevo Pipeline Jenkins")
+
+Parametrizar el proyecto con los siguientes parametros:
+
+
+![Parametro Nombre](/Documentacion/Imagenes/Parametro01.png "Parametro Nombre")
+
+
+![Parametro Tag](/Documentacion/Imagenes/Parametro02.png "Parametro Tag")
+
+
+![Parametro Namespace](/Documentacion/Imagenes/Parametro03.png "Parametro Namespace")
 
 Get URL of Openshift Registry
 
