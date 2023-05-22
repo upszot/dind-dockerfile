@@ -106,7 +106,7 @@ Copiar todo el contenido del JenkinsFile al pipeline script
 
 Guardar el pipeline.
 
-El pipeline ya estará listo para la ejecución.
+El pipeline ya estará listo para la ejecución y despliegue.
 
 
 
