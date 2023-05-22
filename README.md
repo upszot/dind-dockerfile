@@ -104,15 +104,9 @@ Copiar todo el contenido del JenkinsFile al pipeline script
 ![Pipeline Script](/Documentacion/Imagenes/Jenkinsfile.png "Pipeline Script")
 
 
-Get URL of Openshift Registry
+Guardar el pipeline.
 
-```bash
-oc get route default-route -n openshift-image-registry --template='{{ .spec.host }}'
-```
-Login into OC Registry
-```bash
-oc registry login
-```
+El pipeline ya estará listo para la ejecución.
 
 
 
