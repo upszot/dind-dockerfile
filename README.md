@@ -1,8 +1,8 @@
 # Jenkins - Podman-in-Podman
 
-## Prerequisites
+## Prerequisitos
 
-* SA con permisos de Editor
+* Crear una SA con permisos de Editor de registro de Openshift
 * Loguearse al Bastion OCP
 * Luego loguearse a la API de Openshift con un usaurio clusteradmin (para poder hacer debug de cada worker)
 
@@ -82,13 +82,13 @@ RUN tar zxf /tmp/client-tools.tar.gz -C /usr/local/bin oc \
 ```
 ## Jenkins
 
-## Creacion de pipeline
+## Pipeline
 
-Crear un nuevo Pipeline en Jenkins
+Crear un nuevo Pipeline en Jenkins:
 
 ![Nombre de Pipeline](/Documentacion/Imagenes/NombrePipeline.png "Nuevo Pipeline Jenkins")
 
-Parametrizar el proyecto con los siguientes parametros:
+Parametrizar el proyecto con los siguientes valores:
 
 
 ![Parametro Nombre](/Documentacion/Imagenes/Parametro01.png "Parametro Nombre")
@@ -98,6 +98,11 @@ Parametrizar el proyecto con los siguientes parametros:
 
 
 ![Parametro Namespace](/Documentacion/Imagenes/Parametro03.png "Parametro Namespace")
+
+Copiar todo el contenido del JenkinsFile al pipeline script
+
+![Pipeline Script](/Documentacion/Imagenes/Jenkinsfile.png "Pipeline Script")
+
 
 Get URL of Openshift Registry
 
