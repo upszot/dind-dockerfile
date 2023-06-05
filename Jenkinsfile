@@ -102,11 +102,11 @@ podTemplate(
                     //sh "git add manifiesto${env.BUILD_NUMBER}.yml"
                     //sh "git commit -m 'Build: ${env.BUILD_NUMBER}'"
                     //sh "git push https://SVC_Jenkins_OShift:9d6f4c3f1fda0fe32ac48ff5db4820e61c64eba5@github.pro.edenor/edenorsa/pro-edenor-openshift-pipelines-prometium.git"
-                    sh "git config user.email pgigena@fusion.com.ar"
-                    sh "git config user.name pgigena-fusion"
+                    sh "git config user.email pngigena@gmail.com"
+                    sh "git config user.name pablongigena"
                     sh "git add manifiesto${env.BUILD_NUMBER}.yml"
                     sh "git commit -m 'Build: ${env.BUILD_NUMBER}'"
-                    sh "git push https://pgigena-fusion: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@github.com/pgigena-fusion/dind-dockerfile.git"
+                    sh "git push https://pablongigena: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@github.com/pablongigena/dind-dockerfile.git"
                     
             }
         }
